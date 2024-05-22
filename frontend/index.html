@@ -1,0 +1,159 @@
+<!-- create a dashboard screen for admin named "solar dashboard" -->
+<!-- there will be a side navbar with dashboard name and "powered by shell global" on top. Below it will be navbar items like dashboard, profile, settings and logout -->
+<!-- in the main content, there will be a welcome message on top with the consumer name and their monthly overview values -->
+<!-- below the welcom message and values, there will be an area to display energy consumption, energy generation and the min, max daily usage of consumer -->
+<!-- there will also be a dropdown to select duration like week, month or year and a graphical representation to display the values based on that duration selected -->
+
+<html>
+  <head>
+    <title>Solar Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .sidebar {
+        position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+        left: 0; /* Stay at the left */
+        height: 100%; /* Full-height */
+        width: 200px; /* Set the width of the sidebar */
+        background-color: #ffffff; /* Background color */
+        overflow-x: hidden; /* Disable horizontal scroll */
+        /* padding-top: 20px; / * Place content 20px from the top */
+        padding: 20px 10px;
+        border-right: 1px solid #aaa; /* Add a border to the right of the sidebar */
+      }
+      
+      .sidebar a {
+        display: block; /* Make the links appear below each other */
+        color: black; /* color of links */
+        padding: 16px; /* Add padding */
+        text-decoration: none; /* Remove underline */
+        border-bottom: 1px solid #aaa;
+      }
+      
+      .sidebar a:hover {
+        background-color: #ddd; /* Change color of links on hover */
+        color: black; /* Change color of links on hover */
+      }
+
+      .content {
+        margin-left: 200px; /* Same as the width of the sidebar */
+        padding: 1em; /* Padding around content */
+        overflow: hidden; /* Avoids scrolling when the content is too big */
+        background-color: #f8f9fa; /* Background color */
+      }
+      
+      .content h2, .content p {
+        color: black; /* Text color */
+        padding: 0.5em 0; /* Padding around text */
+      }
+
+      /* .graph {
+        background-color: #ffffff; / * Background color * /
+        padding: 1em; / * Padding around content * /
+        margin-top: 1em; / * Margin from top * /
+      } */
+
+      .content table {
+        width: 100%; /* Full-width table */
+      }
+      
+      .content td {
+        padding: 1em; /* Padding around content */
+        border-right: 1px solid #ddd; /* Add a border to the right of each cell */
+      }
+      
+      .content .welcome-message {
+        width: 40%; /* The welcome message cell will take up 40% of the table width */
+      }
+
+      .card {
+        border: 1px solid #ddd; /* Add a border around the card */
+        padding: 1em; /* Add padding around the card content */
+        margin-bottom: 1em; /* Add some space below the card */
+      }
+      
+      .graph-container {
+        position: relative;
+        width: 100%;
+      }
+      
+      #graph {
+        width: 100%; /* Adjust as needed */
+        display: inline-block;
+        border: 1px solid #ccc;
+      }
+      
+      .stats {
+        position: relative;
+        width: 100%; /* Adjust as needed */
+        text-align: center;
+        display: inline-flex;
+        justify-content: space-evenly;
+      }
+
+      .stat {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0px;
+        background-color: #f9f9f9;
+        width: 45%;
+        display: inline-block;
+      }
+      
+      .stat h2 {
+        margin-top: 0;
+        color: #333;
+      }
+      
+      .value {
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <body>
+    <!-- make a sidebar to display on left side of screen -->
+    <div class="sidebar">
+      <h2>Solar Dashboard</h2>
+      <p>Powered by Shell Global</p>
+      <hr />
+      <a href="#">Dashboard</a>
+      <a href="#">Profile</a>
+      <a href="#">Settings</a>
+      <a href="#">Logout</a>
+    </div>
+    <!-- make a main content area to display on right side of screen -->
+    <div class="content">
+      <table>
+        <tr>
+          <td class="welcome-message"><h2>Welcome, Carl Sagan</h2></td>
+          <td><p>Monthly Overview</p></td>
+          <td><p>Energy Consumption: 1000 kWh</p></td>
+          <td><p>Energy Generation: 2000 kWh</p></td>
+          <td><p>Min Daily Usage: 50 kWh</p></td>
+          <td><p>Max Daily Usage: 100 kWh</p></td>
+        </tr>
+      </table>
+      <div class="card">
+        <!-- make a dropdown to select duration -->
+        <select id="duration">
+          <option value="week">Week</option>
+          <option value="month">Month</option>
+          <option value="year">Year</option>
+        </select>
+        
+        <!-- make a graphical representation to display the values based on duration selected -->
+        <div class="graph-container">
+          <div id="stats" class="stats">
+            <!-- Min and max values will be inserted here -->
+          </div>
+          <canvas id="graph" class="graph" width="50%"></canvas>
+        </div>
+      </div>
+    
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
