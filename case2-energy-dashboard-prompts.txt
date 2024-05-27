@@ -1,0 +1,76 @@
+<!-- create a dashboard screen for admin named "solar dashboard" -->
+<!-- there will be a side navbar with dashboard name and "powered by shell global" on top. Below it will be navbar items like dashboard, profile, settings and logout -->
+<!-- in the main content, there will be a welcome message on top with the consumer name and their monthly overview values -->
+<!-- below the welcom message and values, there will be an area to display energy consumption, energy generation and the min, max daily usage of consumer -->
+<!-- there will also be a dropdown to select duration like week, month or year and a graphical representation to display the values based on that duration selected -->
+
+
+
+<!-- make a sidebar to display on left side of screen -->
+
+<!-- make a main content area to display on right side of screen -->
+
+
+style the sidebar to display on left side of screen
+
+style the main- content to display on rest of the screen
+
+show a vertical line to separate the sidebar and main content
+
+display the welcome message, and monthly overview values in same rowbut in differnt cells with some styles. the welcome message should have more width than other values
+
+add the dropdown and graph in same card with the graph changing based on dropdown selection
+
+shift the javascript code to separate file
+
+@workspace /fix graph text not changing when dropdown selection is changed
+
+add comments to explain js code
+
+on changing the duration dropdown selection, an api from server.js should get called based on the selected value
+
+how to create a graph of line chart
+
+draw a line graph on canvas for a week's consumption and generation values
+
+how to enable cors to call an api defined in server.js from main.js
+
+@workspace /fix Canvas is already in use. Chart with ID '0' must be destroyed before the canvas with ID 'graph' can be reused.
+
+change the chart label and values based on duration dropdown selection
+
+ISSUE: sometimes the suggestion stops for sometime midway
+
+ISSUE: once the suggestion stopped in chat, but after inserting that suggestion in file the rest of the suggestion was completed inline - Error on conversation request. Check the log for more details.
+
+the right side of graph should have list the min and max values for consumption and generation used in graph
+
+the min and max stats should be on right side of the graph canvas
+
+the min and max stats should be on right side of the graph canvas without using flex
+
+//method for calling the API
+// Call the API with the default duration
+
+the min and max stats should be above the graph canvas
+
+ISSUE: styling suggestions are not good
+
+style the min and max stats to display above the graph canvas
+
+change the stats to display the min & max values for consumption and generation with good styling
+
+how to run the html page on localhost url
+
+create a batch file to run frontend and backend
+
+/explain
+
+create a readme file with description of frontend and backend and how to run then with run bat file
+
+add a paragraph about ports where frontend and backend runs
+
+@workspace /fix complete the running teh project section
+
+@workspace /fix correct the running the project section
+
